@@ -7,6 +7,9 @@ CEND='\033[0m'
 # Default values:
 PROJ_NAME="chisel_proj"
 BASE_URL="https://github.com/hossein1387/BaseChiselProj.git"
+PROJ_DIR=`pwd`
+PROJ_PATH=""
+IDEA_DIR=""
 
 # Utility functions are here:
 function show_help()
@@ -36,6 +39,10 @@ if [ -d "$PROJ_NAME" ]; then
 	exit 1
 fi
 
+PROJ_PATH=$PROJ_DIR/$PROJ_NAME
+IDEA_DIR=$PROJ_PATH/.idea
+sed -i 's/SimpleReg/$PROJ_NAME/g' *.txt
+
 echo -e "Cloning ${Green}$BASE_URL${CEND} repository in ${Green}$PROJ_NAME${CEND} directory..."
 git clone "$BASE_URL" "$PROJ_NAME"
 cd "$PROJ_NAME"
@@ -43,3 +50,7 @@ rm -rf .git
 git init
 
 echo "done!"
+
+
+echo $PROJ_PATH
+echo $IDEA_DIR
