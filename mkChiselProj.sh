@@ -41,7 +41,7 @@ fi
 
 PROJ_PATH=$PROJ_DIR/$PROJ_NAME
 IDEA_DIR=$PROJ_PATH/.idea
-sed -i 's/SimpleReg/$PROJ_NAME/g' *.txt
+sed -i 's/SimpleReg/$PROJ_NAME/g' $IDEA_DIR/
 
 echo -e "Cloning ${Green}$BASE_URL${CEND} repository in ${Green}$PROJ_NAME${CEND} directory..."
 git clone "$BASE_URL" "$PROJ_NAME"
