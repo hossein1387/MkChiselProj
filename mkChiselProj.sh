@@ -58,6 +58,8 @@ sed -i "s/SimpleReg/${PROJ_NAME}/g" *.scala
 cd $PROJ_PATH/src/main/scala/
 mv SimpleReg.scala ${PROJ_NAME}.scala 
 sed -i "s/SimpleReg/${PROJ_NAME}/g" *.scala
+cd $PROJ_PATH
+sed -i "s/chisel-module-template/${PROJ_NAME}_proj/g" build.sbt
 
 # init git repo and add all files
 cd $PROJ_PATH
