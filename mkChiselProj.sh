@@ -18,11 +18,9 @@ IDEA_DIR=""
 # Utility functions are here:
 function show_help()
 {
-  IT=$(CAT << EOF
-  usage: ./mkChiselProj.sh CHISEL_PROJECT_NAME
+  IT="usage: ./mkChiselProj.sh CHISEL_PROJECT_NAME
          It will create a default chisel project under CHISEL_PROJECT_NAME
-         directory. 
-  )
+         directory."
   echo "$IT"
 }
 
@@ -51,7 +49,7 @@ rm -rf .git
 # Rename idea project
 PROJ_PATH=$PROJ_DIR/$PROJ_NAME
 IDEA_DIR=$PROJ_PATH/.idea
-sed -i "s/SimpleReg/${PROJ_NAME}/g" $IDEA_DIR/workspace.xml
+#sed -i "s/SimpleReg/${PROJ_NAME}/g" $IDEA_DIR/workspace.xml
 cd $PROJ_PATH/src/test/scala/
 mv SimpleRegUnitTest.scala ${PROJ_NAME}UnitTest.scala 
 sed -i "s/SimpleReg/${PROJ_NAME}/g" *.scala
